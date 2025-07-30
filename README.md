@@ -3,7 +3,7 @@
 
 A Power BI dashboard to analyze heart disease trends using clinical data.
 
-![Heart Disease Dashboard](d43384f9-123d-4896-b5fd-83a67be21fd7.png)
+![Heart Disease Dashboard](Images/heart_dashboard.png)
 
 ---
 
