@@ -20,24 +20,54 @@ A Power BI dashboard to analyze heart disease trends using clinical data.
 
 ## 📌 Visualizations & Highlights
 
-### Demographics
-- **Gender Distribution**: 69.56% Male, 30.44% Female
-- **Age Groups**: Most patients fall between 50–59 years
-- **Thalassemia**:
-  - Most common: *Reversible Defect* (53.07%)
-  - Other types include Unknown (6.24%), Fixed Defect, and Normal
+### 🧬 Demographics
 
-### Clinical Indicators
-- **High Cholesterol Patients**: 503 with `chol > 240`
-- **High-Risk Patients**: Based on combined clinical features
-- **Angina on Exercise**: Majority of heart disease cases report angina
+* **Gender Distribution**:
 
-### Risk Group Analysis
-- **Heart Disease by Age Group**: Prevalence increases with age
-- **Chest Pain Type Correlation**:
-  - Typical and Asymptomatic pain types are highly associated with heart disease
-- **ST Depression Distribution**:
-  - Lower ST depression more common in heart disease patients
+  * **69.56% Male**, **30.44% Female**
+  * Heart disease is more prevalent among male patients in the dataset.
+
+* **Age Distribution**:
+
+  * The **majority of patients** fall within the **50–59 years** age range, indicating middle-aged individuals are more represented.
+
+* **Thalassemia Status**:
+
+  * The most common type is **Reversible Defect (53.07%)**.
+  * Other types include **Fixed Defect**, **Normal**, and **Unknown (6.24%)**.
+  * *Note: Patients with "Unknown" thalassemia status are excluded from analysis for data consistency.*
+
+---
+
+### 🩺 Clinical Indicators
+
+* **High Cholesterol Patients**:
+
+  * **503 patients** have cholesterol levels **greater than 240 mg/dl**, considered high risk.
+
+* **High-Risk Patients**:
+
+  * Patients with **both high cholesterol and high ST depression (`oldpeak > 2`)** are considered **clinically high risk** for heart disease.
+
+* **Exercise-Induced Angina (Exang)**:
+
+  * A majority of **heart disease cases** are found among patients who **do not report angina during exercise**, which may seem counterintuitive but could be influenced by exercise avoidance or underlying conditions.
+
+---
+
+### ⚠️ Risk Group Analysis
+
+* **Heart Disease by Age Group**:
+
+  * The **prevalence of heart disease increases with age**, especially in patients above 50 years.
+
+* **Chest Pain Type Correlation**:
+
+  * **Typical Angina** and **Asymptomatic chest pain** types show a **strong correlation with heart disease**.
+
+* **ST Depression (Oldpeak) Distribution**:
+
+  * Patients with **lower ST depression** values (closer to 0) tend to have **higher heart disease prevalence**, suggesting that ST depression alone may not be a strong predictor in isolation but should be combined with other factors.
 
 ---
 
@@ -55,12 +85,50 @@ A Power BI dashboard to analyze heart disease trends using clinical data.
 
 ## 📁 Dataset
 
-This dashboard is based on a public heart disease dataset. The features include:
-- Age, Sex, Chest Pain Type
-- Blood Pressure, Cholesterol, Fasting Blood Sugar
-- ECG Results, Max Heart Rate, Exercise-Induced Angina
-- ST Depression, ST Slope, Major Vessels, Thalassemia
-- Target (Heart Disease Presence)
+* **Age**: Patient age in years
+
+* **Sex**: 1 = Male, 0 = Female
+
+* **Chest Pain Type** (4 values):
+
+  * 0 = Typical Angina
+  * 1 = Atypical Angina
+  * 2 = Non-anginal Pain
+  * 3 = Asymptomatic
+
+* **Resting Blood Pressure** (in mm Hg)
+
+* **Serum Cholesterol** (in mg/dl)
+
+* **Fasting Blood Sugar**: >120 mg/dl (1 = True, 0 = False)
+
+* **Resting Electrocardiographic Results**:
+
+  * 0 = Normal
+  * 1 = ST-T Wave Abnormality
+  * 2 = Probable or Definite Left Ventricular Hypertrophy
+
+* **Maximum Heart Rate Achieved**
+
+* **Exercise-Induced Angina**: 1 = Yes, 0 = No
+
+* **Oldpeak**: ST depression induced by exercise relative to rest
+
+* **Slope of the Peak Exercise ST Segment**:
+
+  * 0 = Upsloping
+  * 1 = Flat
+  * 2 = Downsloping
+
+* **Number of Major Vessels Colored by Fluoroscopy**: 0–3
+
+* **Thalassemia** (`thal`):
+
+  * 0 = Normal
+  * 1 = Fixed Defect
+  * 2 = Reversible Defect
+
+* **Target**: 1 = Presence of heart disease, 0 = No heart disease
 
 ---
 
